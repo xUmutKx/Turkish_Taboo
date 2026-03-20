@@ -13,7 +13,7 @@
 
 ## 📱 Features
 
-- **1752 Turkish cards** + 318 English cards
+- **Bunch of both Turkish 🇹🇷 and English 🇺🇸 cards**
 - **Turkish / English** language support with flag icons
 - **2-6 teams** with custom team names
 - **8 color themes** — Dark, Pink Dark, Pink Light, Blue, Orange, Forest, Purple, Yellow
