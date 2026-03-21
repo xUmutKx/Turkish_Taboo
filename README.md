@@ -1,142 +1,179 @@
-# TABU - J2ME Mobile Game
+# 🎮 Tabu - J2ME Oyunu v22.01
 
-<p align="center">
-  <img src="logo.png" width="120" alt="Tabu Logo"/>
-</p>
-
-<p align="center">
-  <b>A Turkish/English Taboo word game for J2ME phones and Android (via J2ME Loader)</b><br>
-  MIDP-2.0 / CLDC-1.1 • 1752 Cards • 2-6 Teams • 8 Themes
-</p>
+Türkçe/İngilizce Tabu kelime oyunu. Nokia ve eski Java telefonları için geliştirilmiştir.
 
 ---
 
-## 📱 Features
+## 📱 Uyumluluk
 
-- **Bunch of both Turkish 🇹🇷 and English 🇺🇸 cards**
-- **Turkish / English** language support with flag icons
-- **2-6 teams** with custom team names
-- **8 color themes** — Dark, Pink Dark, Pink Light, Blue, Orange, Forest, Purple, Yellow
-- **Background music** — MIDI loop music
-- **Adjustable** round time (30–120 sec), pass limit, number of rounds
-- **Taboo = -3 points** penalty
-- **Winner screen** with confetti animation
-- **Statistics** — total correct, taboo, pass, high score, last 5 games
-- **Persistent save** — settings and stats saved between sessions (RecordStore)
-- **Card animations** — smooth ease-out transition between cards
-- Compatible with Nokia 6303i and other old J2ME phones
+- **Platform:** J2ME (MIDP-2.0 / CLDC-1.1)
+- **Test Edildi:** Nokia 6303i, J2ME Loader (Android)
+- **JAR Boyutu:** ~200KB
 
 ---
 
-## 🕹️ Controls
+## 🎯 Oyun Nasıl Oynanır?
 
-| Key | In Game | In Menu |
-|-----|---------|---------|
-| **5** / Fire | ✅ Correct (+1) | Select |
-| **1** / Left | ❌ Taboo (-3) | — |
-| **3** / Right | ⏭ Pass | — |
-| **2** / Up | — | Up |
-| **8** / Down | — | Down |
-| **\*** | Stop / Back | Back |
-| **#** | — | Reset stats |
+1. **Oyuna Başla** → Kart destesi seç → Hazır ekranı → **5** ile turu başlat
+2. Anlatan kişi kartı açıklar, takım tahmin eder
+3. **5** = Doğru (+1 puan) | **1** = Tabu (-3 puan) | **3** = Pas
+4. Süre bitince tur biter, sıra değişir
+5. En çok puan toplayan takım kazanır
 
 ---
 
-## 🔨 Build (Termux / Linux)
+## 🃏 Kart Kategorileri
 
-### Requirements
-- Java JDK (openjdk-21)
-- ProGuard 7.3.2 (for old phone compatibility)
-- microemulator JAR (midp.jar)
+### Türkçe
+| Kategori | Açıklama |
+|----------|----------|
+| Mix | Klasik karma kartlar (800 kart) |
+| Kış | Kar, buz, kış temalı kelimeler |
+| Bahar | Çiçek, doğa, bahar temalı |
+| Tatil | Seyahat, plaj, tatil temalı |
+| Gece Yarısı | Gece hayatı, parti temalı |
+| Ünlüler | Tanınmış isimler |
+| Genel Kültür | Bilim, sanat, tarih |
 
-### Steps
+### İngilizce
+| Category | Description |
+|----------|-------------|
+| Mix | Classic mixed cards |
+| Winter | Snow, ice, winter themed |
+| Spring | Flowers, nature, spring |
+| Holiday | Travel, beach, vacation |
+| Midnight | Nightlife, party themed |
+| Celebrities | Famous people |
+| General Knowledge | Science, art, history |
+
+---
+
+## 🎮 Tuş Kontrolleri
+
+| Tuş | Oyun | Menü |
+|-----|------|------|
+| **5 / Orta** | ✅ Doğru (+1) | Seç / Gir |
+| **1 / Sol** | ❌ Tabu (-3) | — |
+| **3 / Sağ** | ⏭ Pas | — |
+| **2 / Yukarı** | — | Yukarı |
+| **8 / Aşağı** | — | Aşağı |
+| **\*** | Dur / Geri | Geri |
+| **# (Sağ Üst)** | — | — |
+
+---
+
+## ⚙️ Ayarlar
+
+| Ayar | Seçenekler |
+|------|------------|
+| Takım | 2-6 takım |
+| Süre | 30 / 45 / 60 / 90 / 120 sn |
+| Pas | 0 / 1 / 2 / 3 / 5 / Sınırsız |
+| Tur | 1 / 2 / 3 / 4 / 5 / Sınırsız |
+| Dil | Türkçe / İngilizce |
+| Tema | 16 farklı tema |
+| Ses | Açık / Kapalı |
+| Titreşim | Açık / Kapalı |
+| Müzik | Açık / Kapalı |
+
+---
+
+## 🎨 Temalar (16 Adet)
+
+| # | TR | EN |
+|---|----|----|
+| 1 | Koyu | Dark |
+| 2 | Pembe K. | Pink Dark |
+| 3 | Pembe A. | Pink Light |
+| 4 | Mavi | Blue |
+| 5 | Turuncu | Orange |
+| 6 | Orman | Forest |
+| 7 | Mor | Purple |
+| 8 | Sarı | Yellow |
+| 9 | Buz | Ice |
+| 10 | Alev | Flame |
+| 11 | Okyanus | Ocean |
+| 12 | Altın | Gold |
+| 13 | Neon | Neon |
+| 14 | Galaksi | Galaxy |
+| 15 | Günbatımı | Sunset |
+| 16 | Türkiye | Turkey |
+
+---
+
+## 🐛 Debug Modu
+
+Ana menüde D-Pad ile **Konami kodu** gir:
+
+```
+↑ ↑ ↓ ↓ ← → ← →
+```
+
+Sonra **#** tuşuna bas → Tüm emojiler görüntülenir (263 emoji).
+
+---
+
+## 📊 İstatistikler
+
+- Toplam doğru / tabu / pas sayısı
+- En yüksek skor ve rekor takım
+- Son 5 oyun geçmişi
+- **#** ile sıfırlama
+
+---
+
+## 🔧 Derleme (Termux)
 
 ```bash
-# Install Java
-pkg install openjdk-21
-
-# Download dependencies
-wget https://repo1.maven.org/maven2/org/microemu/microemulator/2.0.4/microemulator-2.0.4.jar -O midp.jar
-wget https://github.com/Guardsquare/proguard/releases/download/v7.3.2/proguard-7.3.2.zip
-unzip proguard-7.3.2.zip
-
-# Compile
-mkdir -p build/classes
+# Derleme
 javac -source 8 -target 8 -classpath midp.jar -d build/classes \
   src/tabu/TabuData.java src/tabu/EngData.java \
+  src/tabu/EmojiData.java src/tabu/EmojiDataEN.java \
   src/tabu/GameCanvas.java src/tabu/TabuMIDlet.java
 
-# Create JAR
-jar cfm TurkceTabu.jar META-INF/MANIFEST.MF -C build/classes . \
-  logo.png tr.png en.png music.mid
-
-# For old phones (Nokia etc.) - preverify + downgrade class version
+# JAR oluşturma
+jar cfm TurkceTabu.jar META-INF/MANIFEST.MF -C build/classes . logo.png tr.png en.png music.mid e/
 java -jar proguard-7.3.2/lib/proguard.jar @proguard.pro
 jar xf TurkceTabu_verified.jar
 for f in tabu/*.class; do
   printf '\xca\xfe\xba\xbe\x00\x00\x00\x2e' | dd of=$f bs=1 count=8 conv=notrunc 2>/dev/null
 done
-jar cfm TurkceTabu_final.jar META-INF/MANIFEST.MF tabu/*.class logo.png tr.png en.png music.mid
+jar cfm TurkceTabu_final.jar META-INF/MANIFEST.MF tabu/*.class logo.png tr.png en.png music.mid e/
 ```
 
 ---
 
-## 📲 Installation
-
-### J2ME Loader (Android)
-1. Copy `TurkceTabu.jar` to Android
-2. Open J2ME Loader → tap `+`
-3. Select the JAR file
-4. Config: **MIDP-2.0 / CLDC-1.1**
-5. Play!
-
-### Nokia / Old Phone
-1. Copy `TurkceTabu_final.jar` to phone
-2. Open with file manager and install
-
----
-
-## 📸 Screenshots
-
-<p align="center">
-  <img src="screenshots/1.png" width="150"/>
-  <img src="screenshots/2.png" width="150"/>
-  <img src="screenshots/3.png" width="150"/>
-</p>
-<p align="center">
-  <img src="screenshots/4.png" width="150"/>
-  <img src="screenshots/5.png" width="150"/>
-  <img src="screenshots/6.png" width="150"/>
-</p>
-
----
-
-## 📁 Project Structure
+## 📁 Dosya Yapısı
 
 ```
-TurkceTabu/
 ├── src/tabu/
-│   ├── TabuMIDlet.java   # Main MIDlet
-│   ├── GameCanvas.java   # Game logic & UI
-│   ├── TabuData.java     # 1752 Turkish cards
-│   └── EngData.java      # 318 English cards
+│   ├── TabuMIDlet.java      # Ana MIDlet
+│   ├── GameCanvas.java      # Oyun motoru (tüm ekranlar)
+│   ├── TabuData.java        # TR kart verisi (1170 kart)
+│   ├── EngData.java         # EN kart verisi (1066 kart)
+│   ├── EmojiData.java       # TR emoji eşleştirme
+│   └── EmojiDataEN.java     # EN emoji eşleştirme
+├── e/                       # 283 emoji sprite (8x8 PNG)
 ├── META-INF/MANIFEST.MF
-├── logo.png              # App icon
-├── tr.png                # Turkish flag
-├── en.png                # English flag
-├── music.mid             # Background music
-├── proguard.pro          # ProGuard config
-└── screenshots/
+├── logo.png
+├── tr.png / en.png          # Bayrak görselleri
+├── music.mid                # Arka plan müziği
+└── proguard.pro
 ```
 
 ---
 
-## 👤 Developer
+## ⚠️ Teknik Notlar
 
-**UmutK** — v3.0
+- `StringBuilder` / `StringBuffer` **KULLANILAMAZ** (CLDC uyumsuz)
+- `Math.random()` yerine `new Random()` kullanılır
+- Tüm string birleştirmeleri `cat()` metodu ile yapılır
+- Emoji büyütme piksel bazlı (J2ME'de `drawRegion` yok)
+- Sınıf versiyonu: Java 8 → bytecode `0x2E` (Nokia uyumlu)
 
 ---
 
-## 📄 License
+## 👤 Geliştirici
 
-MIT License
+**UmutK** — 2026  
+Lisans: MIT
